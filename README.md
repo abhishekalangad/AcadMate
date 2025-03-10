@@ -1,7 +1,7 @@
-<<<<<<< HEAD
-# AcadMate
-=======
+
 # AcadMate - Web-Based Study Material Platform
+
+#live Preview @ https://acadmate-eight.vercel.app
 
 ## Overview
 AcadMate is a web-based platform designed to organize and provide study materials efficiently. This project includes multiple web pages, stylesheets, scripts, and assets that enhance user interaction and accessibility.
