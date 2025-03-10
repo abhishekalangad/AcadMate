@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <!-- Basic -->
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <!-- Mobile Metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      <!-- Site Metas -->
+      <meta name="keywords" content="" />
+      <meta name="description" content="" />
+      <meta name="author" content="" />
+      <link rel="shortcut icon" href="images\websitelogo.png" type="">
+      <title>AcadMate - Study Materials</title>
+      <!-- bootstrap core css -->
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+      <!-- font awesome style -->
+      <link href="css/font-awesome.min.css" rel="stylesheet" />
+      <!-- Custom styles for this template -->
+      <link href="css/style.css" rel="stylesheet" />
+      <link href="css/style_semester.css" rel="stylesheet" />
+      <!-- responsive style -->
+      <link href="css/responsive.css" rel="stylesheet" />
+      <!-- Optional CSS for styling -->
+   </head>
+<body>
+  <!-- Header Placeholder -->
+  <div id="header"></div>
+
+  <div class="product_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2><span id="stream-title"></span> - <span id="semester-title"></span></h2>
+      </div>
+      <div class="row" id="subject-list"></div>
+      <div class="btn-box">
+        <!-- <a href="./our_materials.html" class="view-all-btn">Back to Stream</a> -->
+        <button onclick="goBack()" class="back-button">Go Back</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Placeholder
+  <div id="footer"></div> -->
+
+  <!-- JavaScript to Populate Subjects -->
+  <script>
+    // Sample subject data with Google Drive links (replace with actual links)
+    const subjects = {
+      mca: {
+        1: [
+          { name: "Linux Shell Programming", link: "https://drive.google.com/drive/folders/1TKbIztU282Nze8pO74yK9LgNEyisVev9?usp=drive_link" },
+          { name: "Programming in JavaScript Using React", link: "https://drive.google.com/drive/folders/1Jy2_DR7jqNmJ9WzvDg0zMIsoZhaGB769?usp=drive_link" },
+          { name: "Programming with Java", link: "https://drive.google.com/drive/folders/1lmvJ3AE9Zx4VaKECqlsmU_dM4UHuz7Qz?usp=drive_link" },
+          { name: "Generative Artificial Intelligence", link: "https://drive.google.com/drive/folders/1CiCcjfuISZaBbrG7vIV1lVG1v_eXeqwR?usp=sharing" },
+          { name: "Advanced Database Management Systems", link: "https://drive.google.com/drive/folders/1m4g9X6HN4WrM8TwFe5gAXUSWVST8iXj2?usp=sharing" }
+        ],
+        2: [
+          { name: "Internet of Things (IoT)", link: "https://drive.google.com/drive/folders/1i3320mWREQPY_GJVc1Gl2blQUs6chQHf?usp=drive_link" },
+          { name: "Natural Language Processing & Machine Learning", link: "https://drive.google.com/drive/folders/1uRKiJCjb1BWFZWVKe5DVhz5lgbKhNcto?usp=drive_link" },
+          { name: "Web Programming with Python", link: "https://drive.google.com/drive/folders/1pgdLzBpsH7fmWcemi12V_govxckC0sQ9?usp=drive_link" },
+          { name: "Android Programming Using Flutter", link: "https://drive.google.com/drive/folders/1VIH6pyqSMj9AavpB_tV90Es1faVvx0vG?usp=drive_link" },
+          { name: "Network Security", link: "https://drive.google.com/drive/folders/1NvHMU6vWSnpUzyySlX6D3z05bs6mvKHZ?usp=drive_link" }
+        ],
+        3: [
+          { name: "Prompt Engineering for AI Systems", link: "https://drive.google.com/drive/folders/1qW-K02tsD7BPNbvUUZl9jpNTR7aBKSlv?usp=drive_link" },
+          { name: "Cyber Security", link: "https://drive.google.com/drive/folders/1pd6vsmDR0hybr90H0sJjSoov9hbWWkRV?usp=drive_link  " },
+          { name: "Game Developing Using Unity", link: "https://drive.google.com/drive/folders/1VpGvdXIRtWAfB31UBorYHE0dBNAzJdfi?usp=drive_link" },
+          { name: "Network Security", link: "https://drive.google.com/drive/folders/1gocto_1TmQlZg45RLx0dmOa01hZC-DL0?usp=drive_link" }
+          // { name: "", link: "https://drive.google.com/file/d/YOUR_ID_15/view" }
+        ],
+        4: [
+          { name: "Project Work", link: "https://drive.google.com/file/d/YOUR_ID_26/view" },
+          { name: "Seminar", link: "https://drive.google.com/file/d/YOUR_ID_27/view" },
+          { name: "Elective I", link: "https://drive.google.com/file/d/YOUR_ID_28/view" },
+          { name: "Elective II", link: "https://drive.google.com/file/d/YOUR_ID_29/view" }
+        ]
+      },
+      mba: {
+        1: [
+          { name: "Management Principles", link: "https://drive.google.com/file/d/YOUR_ID_30/view" },
+          { name: "Organizational Behavior", link: "https://drive.google.com/file/d/YOUR_ID_31/view" },
+          { name: "Accounting for Managers", link: "https://drive.google.com/file/d/YOUR_ID_32/view" },
+          { name: "Business Statistics", link: "https://drive.google.com/file/d/YOUR_ID_33/view" },
+          { name: "Business Communication", link: "https://drive.google.com/file/d/YOUR_ID_34/view" }
+        ],
+        2: [
+          { name: "Financial Management", link: "https://drive.google.com/file/d/YOUR_ID_35/view" },
+          { name: "Marketing Management", link: "https://drive.google.com/file/d/YOUR_ID_36/view" },
+          { name: "Human Resource Management", link: "https://drive.google.com/file/d/YOUR_ID_37/view" },
+          { name: "Operations Management", link: "https://drive.google.com/file/d/YOUR_ID_38/view" },
+          { name: "Business Research Methods", link: "https://drive.google.com/file/d/YOUR_ID_39/view" }
+        ],
+        3: [
+          { name: "Strategic Management", link: "https://drive.google.com/file/d/YOUR_ID_40/view" },
+          { name: "Entrepreneurship Development", link: "https://drive.google.com/file/d/YOUR_ID_41/view" },
+          { name: "International Business", link: "https://drive.google.com/file/d/YOUR_ID_42/view" },
+          { name: "Elective I", link: "https://drive.google.com/file/d/YOUR_ID_43/view" },
+          { name: "Elective II", link: "https://drive.google.com/file/d/YOUR_ID_44/view" }
+        ],
+        4: [
+          { name: "Project Work", link: "https://drive.google.com/file/d/YOUR_ID_45/view" },
+          { name: "Business Ethics", link: "https://drive.google.com/file/d/YOUR_ID_46/view" },
+          { name: "Elective III", link: "https://drive.google.com/file/d/YOUR_ID_47/view" },
+          { name: "Elective IV", link: "https://drive.google.com/file/d/YOUR_ID_48/view" }
+        ]
+      }
+    };
+
+    // Get URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const stream = urlParams.get("stream");
+    const semester = urlParams.get("semester");
+
+    // Set page title
+    document.getElementById("stream-title").textContent = stream.toUpperCase();
+    document.getElementById("semester-title").textContent = `${semester}st Semester`;
+
+    // Populate subjects
+    const subjectList = document.getElementById("subject-list");
+    const subjectData = subjects[stream][semester];
+    subjectData.forEach(subject => {
+      const div = document.createElement("div");
+      div.className = "col-sm-6 col-md-4 col-lg-3";
+      div.innerHTML = `
+        <div class="subject-box">
+          <h6><a href="${subject.link}" target="_blank">${subject.name}</a></h6>
+        </div>
+      `;
+      subjectList.appendChild(div);
+    });
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+
+  <!-- JavaScript to Load Header and Footer -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header').innerHTML = data);
+
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer').innerHTML = data);
+    });
+  </script>
+</body>
+</html>

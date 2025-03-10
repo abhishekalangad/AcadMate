@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #0c0c0c;
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+.layout_padding {
+  padding: 70px 0;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+}
+
+.heading_container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.heading_container h2 {
+  position: relative;
+  margin-bottom: 0;
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
+.heading_container h2::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 5px;
+  background: #f7444e;
+  margin: 10px auto 10px;
+}
+
+.heading_container h2 span {
+  color: #f7444e;
+}
+
+.heading_container.heading_center {
+  align-items: center;
+  text-align: center;
+}
+
+a,
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: initial;
+}
+
+.product_section .box {
+  position: relative;
+  margin-top: 25px;
+  padding: 35px;
+  background-color: #f7f8f9;
+  transition: all .3s;
+  box-shadow: 5px 5px 5px -5px rgba(0,0,0,.2);
+  border: solid #fff 10px;
+}
+.back-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #f7444e;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #d6333c;
+}
+/* Toggle Container for MCA and MBA */
+.toggle-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 20px;
+}
+
+.toggle-container h3 {
+  font-size: 24px;
+  margin: 0;
+}
+
+#mca-toggle, #mba-toggle {
+  color: #002c3e;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+#mca-toggle:hover, #mba-toggle:hover {
+  color: #f7444e;
+}
+
+/* Semester Grid Styles */
+.semester-container {
+  display: none;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  background-color: #f7f8f9;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.semester-box {
+  padding: 15px;
+  text-align: center;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.semester-box:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
+}
+
+.semester-box h6 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #002c3e;
+}
+
+.semester-box h6 a {
+  color: #002c3e;
+  transition: all 0.3s;
+}
+
+.semester-box h6 a:hover {
+  color: #f7444e;
+}
+
+/* Subject Box Styles for Semester Page */
+.subject-box {
+  padding: 15px;
+  text-align: center;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.subject-box:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
+}
+
+.subject-box h6 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.subject-box h6 a {
+  color: #002c3e;
+  transition: all 0.3s;
+}
+
+.subject-box h6 a:hover {
+  color: #f7444e;
+}
+
+/* View All Materials Button */
+.product_section .btn-box {
+  display: flex;
+  justify-content: center;
+  margin-top: 45px;
+}
+
+.view-all-btn {
+  display: inline-block;
+  padding: 12px 45px;
+  background-color: #f7444e;
+  border: 2px solid #f7444e;
+  color: #ffffff;
+  border-radius: 35px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.view-all-btn:hover {
+  background-color: transparent;
+  color: #f7444e;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .semester-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .semester-container {
+    grid-template-columns: 1fr;
+  }
+  .toggle-container {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+}

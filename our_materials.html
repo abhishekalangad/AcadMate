@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <!-- Basic -->
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <!-- Mobile Metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      <!-- Site Metas -->
+      <meta name="keywords" content="" />
+      <meta name="description" content="" />
+      <meta name="author" content="" />
+      <link rel="shortcut icon" href="images\websitelogo.png" type="">
+      <title>AcadMate - Study Materials</title>
+      <!-- bootstrap core css -->
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+      <!-- font awesome style -->
+      <link href="css/font-awesome.min.css" rel="stylesheet" />
+      <!-- Custom styles for this template -->
+      <link href="css/style.css" rel="stylesheet" />
+      <link href="css/style_semester.css" rel="stylesheet" />
+      <!-- responsive style -->
+      <link href="css/responsive.css" rel="stylesheet" />
+      <!-- Optional CSS for styling -->
+   </head>
+<body>
+  <!-- Header Placeholder -->
+  <div id="header"></div>
+
+  <!-- Product Section -->
+  <div class="product_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>Our <span>Study Materials</span></h2>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <div class="box">
+            <!-- Toggle Buttons for MCA and MBA -->
+            <div class="detail-box toggle-container">
+              <h3>
+                <a href="#" id="mca-toggle" onclick="toggleSemesters('mca')">MCA</a>
+              </h3>
+              <h3>
+                <a href="#" id="mba-toggle" onclick="toggleSemesters('mba')">MBA</a>
+              </h3>
+            </div>
+            <!-- MCA Semester Options -->
+            <div id="mca-semester-options" class="semester-container" style="display: none;">
+              <div class="semester-box">
+                <h6><a href="semester.html?stream=mca&semester=1">1st Semester</a></h6>
+              </div>
+              <div class="semester-box">
+                <h6><a href="semester.html?stream=mca&semester=2">2nd Semester</a></h6>
+              </div>
+              <div class="semester-box">
+                <h6><a href="semester.html?stream=mca&semester=3">3rd Semester</a></h6>
+              </div>
+              <div class="semester-box">
+                <h6><a href="semester.html?stream=mca&semester=4">4th Semester</a></h6>
+              </div>
+            </div>
+            <!-- MBA Semester Options -->
+            <div id="mba-semester-options" class="semester-container" style="display: none;">
+              <div class="semester-box">
+                <h6><a href="semester.html?stream=mba&semester=1">1st Semester</a></h6>
+              </div>
+              <div class="semester-box">
+                <h6><a href="semester.html?stream=mba&semester=2">2nd Semester</a></h6>
+              </div>
+              <div class="semester-box">
+                <h6><a href="semester.html?stream=mba&semester=3">3rd Semester</a></h6>
+              </div>
+              <div class="semester-box">
+                <h6><a href="semester.html?stream=mba&semester=4">4th Semester</a></h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Back to Home Button -->
+      <div class="row" id="subject-list"></div>
+      <div class="btn-box">
+        <!-- <a href="./semester.html" class="view-all-btn">Back to Home</a> -->
+        <button onclick="goBack()" class="back-button">Go Back</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Placeholder -->
+  <div id="footer"></div>
+
+  <!-- JavaScript to Toggle Semester Options -->
+  <script>
+    function toggleSemesters(stream) {
+      const mcaOptions = document.getElementById("mca-semester-options");
+      const mbaOptions = document.getElementById("mba-semester-options");
+      if (stream === "mca") {
+        mcaOptions.style.display = mcaOptions.style.display === "none" || mcaOptions.style.display === "" ? "grid" : "none";
+        mbaOptions.style.display = "none"; // Hide MBA when MCA is toggled
+      } else if (stream === "mba") {
+        mbaOptions.style.display = mbaOptions.style.display === "none" || mbaOptions.style.display === "" ? "grid" : "none";
+        mcaOptions.style.display = "none"; // Hide MCA when MBA is toggled
+      }
+    }
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+
+  <!-- JavaScript to Load Header and Footer -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header').innerHTML = data);
+
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer').innerHTML = data);
+    });
+  </script>
+</body>
+</html>
