@@ -573,9 +573,10 @@ a:focus {
 
 .why_section .box {
     text-align: center;
-    margin-top: 45px;
+    margin-top: 55px;
+    margin-bottom: 15px;
     background-color: #002c3e;
-    padding: 45px 50px;
+    padding: 80px 60px;
     border-radius: 5px;
     color: #ffffff;
 }
@@ -796,7 +797,7 @@ a:focus {
 .footer_section {
   background-color: #002c3e;
   color: #ffffff;
-  padding-top: 80px;
+  /* padding-top: 800px; */
 }
 
 .footer_section {
@@ -910,14 +911,14 @@ a:focus {
 
 .footer_section .footer-info {
   text-align: center;
-  margin-top: 25px;
+  /* margin-top: 25px; */
 }
 
 .footer_section .footer-info p {
     color: #ffffff;
     margin: 0;
-    padding: 20px 0;
-    border-top: 1px solid rgba(255,255,255,0.2);
+    /* padding: 20px 0; */
+    /* border-top: 1px solid rgba(255,255,255,0.2); */
 }
 
 .footer_section .footer-info p a {
@@ -981,12 +982,12 @@ li.nav-item ul li a:hover, li.nav-item ul li a:focus {
 footer {
     background: #000000;
     color: #f8f8f8;
-    padding: 50px 0 30px;
+    padding: 20px 0 20px;
 }
 
-.logo_footer {
+/* .logo_footer {
     margin-bottom: 30px;
-}
+} */
 
 .information_f p {
     margin-bottom: 1.2rem;

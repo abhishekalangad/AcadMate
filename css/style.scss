@@ -41,6 +41,8 @@ body {
   color: #0c0c0c;
   background-color: #ffffff;
   overflow-x: hidden;
+  height: 100%;
+  display: flex;
 }
 
 .layout_padding {
@@ -56,7 +58,7 @@ body {
 }
 
 .layout_padding2-bottom {
-  padding-bottom: 75px;
+  padding-bottom: 0px;
 }
 
 .layout_padding-top {
@@ -64,7 +66,7 @@ body {
 }
 
 .layout_padding-bottom {
-  padding-bottom: 90px;
+  padding-bottom: 0px;
 }
 
 h1,
@@ -697,8 +699,12 @@ a:focus {
 .footer_section {
   background-color: $primary2;
   color: $white;
-  padding-top: 70px;
+  padding-top: 0px;
   text-align: center;
+  position:relative;
+  bottom: 0;
+  width: 100%;
+  height: 11px;
 
   h4 {
     font-size: 28px;
@@ -707,13 +713,13 @@ a:focus {
   h4,
   .footer-logo {
     font-weight: 600;
-    margin-bottom: 20px;
+    // margin-bottom: 20px;
     @include second-font();
   }
 
-  .footer-col {
-    margin-bottom: 30px;
-  }
+  // .footer-col {
+  //   // margin-bottom: 30px;
+  // }
 
   .footer_contact {
 
@@ -754,12 +760,12 @@ a:focus {
       justify-content: center;
       align-items: center;
       color: $primary2;
-      width: 30px;
+      width: 100%;
       height: 30px;
       border-radius: 100%;
       background-color: $white;
       border-radius: 100%;
-      margin: 0 2.5px;
+      margin: 0 0px;
       font-size: 18px;
 
       &:hover {
@@ -791,13 +797,13 @@ a:focus {
 
   .footer-info {
     text-align: center;
-    margin-top: 25px;
+    // margin-top: 25px;
 
     p {
       color: $white;
       margin: 0;
       padding: 25px 0;
-      border-top: 1px solid #efefef;
+      // border-top: 1px solid #efefef;
 
       a {
         color: inherit;
